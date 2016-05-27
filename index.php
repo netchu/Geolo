@@ -12,7 +12,7 @@
 <tr><td rowspan='2'><img src="img/alimentacion.jpg" width="400"></td>
 <td style="padding-top: 40px;"><center><div><span class="botontxt"><a href="vista/consultajornada.php" target='_blank'>CONSULTAS</a></span><img src="img/boton.jpg"></div></center></td>
 <tr><td style="padding-top: 50px;">
-  <form name="FormLogin" method="post" action="vista/autenticar.php">
+  <form name="FormLogin" method="post" action="controlador/autenticar.php">
       <table width="258" height="113" border="1" align="right">
         <tr>
           <td colspan="2" bgcolor="#AF1901"><div align="center"><strong>INGRESO ADMINISTRADOR</strong> </div></td>

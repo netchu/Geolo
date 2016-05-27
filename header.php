@@ -24,6 +24,6 @@ font-weight: bold;
 <h3>Coordinaci&oacute;n de Seguridad y Soberan&iacute;a Alimentaria de Caracas</h3></center>
 </body>
 <?php
-require 'modelo/conex.php';
+require_once 'modelo/conex.php';
 ?>
 </html>
