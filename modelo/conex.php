@@ -7,7 +7,7 @@
 		private $conex;
 			function conex(){
 				$this->usuario="root";
-				$this->clave="rootroot";
+				$this->clave="rootadmin";
 				$this->servidor="localhost";
 				$this->bd="localizacion";
 				$this->conex='';
