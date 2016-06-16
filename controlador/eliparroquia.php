@@ -1,9 +1,9 @@
 <?php
 			require_once '../modelo/conex.php';
 			$funcion->conectar();
-			$amod=$_POST['jorna'];
+			$amod=$_POST['parro'];
 			$estatus=$_POST['estatus'];
-			if ($nombreparro=="" || $amod==""){
+			if ($estatus=="" || $amod==""){
 				echo "<script>alert('Campos vacios'); self.location='../vista/eliminar.php';</script>";
 			}
 			else {

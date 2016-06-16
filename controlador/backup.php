@@ -324,6 +324,8 @@ function free_result($query_id=-1) {
                 echo( "- Puede bajarsela directamente: </strong><a href=\"$filename\">$filename</a>" );
                 $size = filesize($filename);
                 $size = number_format($size, 0, ',', '.');
+				echo("<table><center> <tr><td><a href='../vista/paneladmin.php' class='menus'>Volver al panel de administraci&oacute;n</a></td></tr></center></table></td></tr></tr>
+	</table></center>");
                 echo( "&nbsp;&nbsp;&nbsp;<small>($size bytes)</small><br>" );
 				
             }

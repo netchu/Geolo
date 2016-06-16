@@ -9,6 +9,6 @@
 			else {
 			$sql="UPDATE `parroquia` SET `nombreparro`='".$nombreparro."',`estatus`='1',`cedula`=NULL WHERE numparroquia='".$amod."'";
 			$query=$funcion->consulta($sql);
-			echo "<script>alert('Estatus de parroquia modificado exitosamente'); self.location='../vista/eliminar.php';</script>";}
+			echo "<script>alert('Estatus de parroquia modificado exitosamente'); self.location='../vista/modificar.php';</script>";}
 			?>
 	

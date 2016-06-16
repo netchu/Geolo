@@ -27,6 +27,6 @@ $data[] = array('pais'=>'Paraguay', 'capital'=>'Asuncion');
 $data[] = array('pais'=>'Venezuela', 'capital'=>'Caracas');
  
 $titles = array('pais'=>'<b>Pais</b>', 'capital'=>'<b>Capital</b>');*/
-$pdf->ezTable($data);
+$pdf->ezTable($data,$cols='',$title="JORNADAS REALIZADAS EL ".$fecha."",$options='');
 $pdf->ezStream();
 ?>

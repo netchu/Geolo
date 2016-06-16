@@ -5,6 +5,9 @@ require_once ('../modelo/conex.php');
 $funcion->conectar();
 	$sql="SELECT jornadas.numjornada, jornadas.fechajornada, jornadas.direccion, jornadas.tlfcontacto, jornadas.descripcion, parroquia.nombreparro FROM jornadas INNER JOIN parroquia ON jornadas.numparroquia=parroquia.numparroquia WHERE jornadas.numparroquia=".$parro."";
 	$resSql=$funcion->consulta($sql);
+	$sql2="SELECT parroquia.nombreparro FROM parroquia WHERE parroquia.numparroquia=".$parro."";
+	$parro2=$funcion->consulta($sql);
+	$parro2=$funcion->row($parro2);
 $pdf = new Cezpdf('A4');
 $pdf->selectFont('../fonts/Helvetica.afm');
 	
@@ -27,6 +30,6 @@ $data[] = array('pais'=>'Paraguay', 'capital'=>'Asuncion');
 $data[] = array('pais'=>'Venezuela', 'capital'=>'Caracas');
  
 $titles = array('pais'=>'<b>Pais</b>', 'capital'=>'<b>Capital</b>');*/
-$pdf->ezTable($data);
+$pdf->ezTable($data,$cols='',$title="JORNADAS REALIZADAS EN ".$parro2['nombreparro']."",$options='');
 $pdf->ezStream();
 ?>

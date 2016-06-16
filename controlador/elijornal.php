@@ -3,7 +3,7 @@
 			$funcion->conectar();
 			$amod=$_POST['jorna'];
 			$estatus=$_POST['estatus'];
-			if ($nombrejornal=="" || $amod==""){
+			if ($estatus=="" || $amod==""){
 				echo "<script>alert('Campos vacios'); self.location='../vista/eliminar.php';</script>";
 			}
 			else {
