@@ -30,6 +30,8 @@ $registro=$funcion->row($query);
 	<li><a href="agregar.php">Agregar datos</a></li>
 	<li><a href="modificar.php">Modificar datos</a></li>
 	<li><a href="eliminar.php">Eliminar datos</a></li>
+	<li><a href="../controlador/backup.php">Copia de seguridad</a></li>
+	<li><a href="reporte.php">Reportes</a></li>
 <?php 
 if ($registro['perfil']=="admin"){
 	echo "<li><a href='panelusuario.php'>Panel de Usuarios</a></li>";

@@ -5,6 +5,16 @@
 <meta name="Revisit" content="1 day"/>
 <meta name="Robots" content="All"/>
 <title>Sistema de Geolocalizaci&oacute;n de Jornadas de Alimentaci&oacute;n</title>
+<script language=Javascript>
+       function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+ 
+         return true;
+      }
+		</script>
 </header>
 <body>
 <?php include '../header.php'; ?>
@@ -52,7 +62,7 @@
 					} while ($registro=mysql_fetch_assoc($query));
 					echo "</select></td></tr>"; //aca termina el select orz
 					echo "<tr><td><span>Direccion</span></td><td><input name='direccion' type='text'></td></tr>";
-					echo "<tr><td><span>Telefono de contacto</span></td><td><input name='tlfcontacto' type='text'></td></tr>";
+					echo "<tr><td><span>Telefono de contacto</span></td><td><input name='tlfcontacto' onkeypress='return isNumberKey(event)' type='text'></td></tr>";
 					echo "<tr><td><span>Rubros</span></td><td><input name='descripcion' type='text'></td></tr>";
 					echo "<tr><td colspan='2'><input type='submit' value='Agregar'>";
 					echo "</form>";

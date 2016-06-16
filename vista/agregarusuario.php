@@ -32,7 +32,11 @@ if (!isset ($_SESSION['cedula'])){
 <tr><td>C&eacute;dula:</td><td><input type="text" name="cedula" id="cedula" size="14"></td></tr>
 <tr><td>Contrase&ntilde;a:</td><td><input type="password" name="clave" id="clave" size="14"></td></tr>
 <tr><td>Nombre de usuario:</td><td><input type="text" name="usuario" id="usuario" size="14"></td></tr>
-<tr><td>Perfil:</td><td><input type="text" name="perfil" id="perfil" size="14"></td></tr>
+<tr><td>Perfil:</td><td><select name="perfil">
+<option value="admin">Administrador</option>
+<option value="opera">Operador</option>
+</select>
+</td></tr>
 <tr align="right"><td><input type="submit" name="agregar" id="agregar" value="Agregar" size="14"></td></tr>
 </table>
 </form>

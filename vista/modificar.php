@@ -1,3 +1,9 @@
+	<?php
+session_start();
+if (!isset ($_SESSION['cedula'])){
+	echo "<script>alert('Necesitas identificarte para acceder al panel'); self.location='index.php';</script>";
+	}
+	?>
 <html>
 <header>
 <meta name="description" content="Sistema de Geolocalizacion">
@@ -5,6 +11,16 @@
 <meta name="Revisit" content="1 day"/>
 <meta name="Robots" content="All"/>
 <title>Sistema de Geolocalizaci&oacute;n de Jornadas de Alimentaci&oacute;n</title>
+<script language=Javascript>
+       function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+ 
+         return true;
+      }
+		</script>
 </header>
 <body>
 <?php include '../header.php'; ?>
@@ -30,6 +46,7 @@
 			</tr>
 			<?php
 				if ($_POST['tabla']=="parroquia"){
+
 					echo "<form method=post name=modparro action='../controlador/modparroquia.php'>";
 					echo "<tr><td><span>Parroquia</span></td><td>";
 					$SQL="SELECT numparroquia, nombreparro FROM parroquia";
@@ -68,11 +85,11 @@
 				if ($_POST['tabla']=="jornadas"){
 					echo "<form method=post name=agrejornada action='../controlador/modjornada.php'>";
 					echo "<tr><td><span>Jornada a modificar</span></td><td>";
-					$SQL="SELECT numjornada, direccion, estatus FROM jornadas";
+					$SQL="SELECT * FROM jornadas";
 					$funcion->conectar();
 					$query=$funcion->consulta($SQL);
 					$registro=$funcion->row($query);
-					echo "<select name='jorna'>";
+					echo "<select id ='jorna' name='jorna'>";
 					echo "<option value=''></option>";
 					do {
 					echo "<option value='".$registro['numjornada']."'>".$registro['direccion']."</option>";
@@ -90,9 +107,9 @@
 						echo "<option value='".$registro['numparroquia']."'>".$registro['nombreparro']."</option>";
 					} while ($registro=mysql_fetch_assoc($query));
 					echo "</select></td></tr>"; //aca termina el select orz
-					echo "<tr><td><span>Direccion</span></td><td><input name='direccion' type='text'></td></tr>";
-					echo "<tr><td><span>Telefono de contacto</span></td><td><input name='tlfcontacto' type='text'></td></tr>";
-					echo "<tr><td><span>Rubros</span></td><td><input name='descripcion' type='text'></td></tr>";
+					echo "<tr><td><span>Direccion</span></td><td><input name='direccion' value='".$registro['direccion']."' type='text'></td></tr>";
+					echo "<tr><td><span>Telefono de contacto</span></td><td><input onkeypress='return isNumberKey(event)' name='tlfcontacto' value='".$registro['tlfcontacto']."' type='text'></td></tr>";
+					echo "<tr><td><span>Rubros</span></td><td><input name='descripcion' value='".$registro['descripcion']."' type='text'></td></tr>";
 					echo "<tr><td colspan='2'><input type='submit' value='Modificar'>";
 					echo "</form>";
 					}
