@@ -608,7 +608,7 @@ function ezTable(&$data,$cols='',$title='',$options=''){
   // add a table of information to the pdf document
   // $data is a two dimensional array
   // $cols (optional) is an associative array, the keys are the names of the columns from $data
-  // to be presented (and in that order), the values are the titles to be given to the columns
+  // to be presented  (and in that order), the values are the titles to be given to the columns
   // $title (optional) is the title to be put on the top of the table
   //
   // $options is an associative array which can contain:
