@@ -73,7 +73,10 @@
 				
 					
 				?>
+				
 		  </table>
+		  <table><center>
+		  <tr><td><a href="paneladmin.php" class="menus">Volver al panel de administraci&oacute;n</a></td></tr></center></table>
 		</td></tr>
 	</tr>
 	</table></center>

@@ -38,7 +38,8 @@ $registro=$funcion->row($query);
 <tr><td>C&eacute;dula:</td><td><input type="text" name="nuevacedula" id="nuevacedula" size="14" value="<?php echo $registro['cedula']; ?>"></td></tr>
 <tr><td>Contrase&ntilde;a:</td><td><input type="password" name="nuevaclave" id="nuevaclave" size="14"></td></tr>
 <tr><td>Nombre de usuario:</td><td><input type="text" readonly="readonly" name="usuario" id="usuario" size="14" value="<?php echo $registro['nombre']; ?>"></td></tr>
-<tr><td>Perfil:</td><td><select name="perfil">
+<tr><td>Perfil:</td><td><select name="nuevoperfil">
+<option value="<?php echo $registro['perfil'];?>"></option>
 <option value="admin">Administrador</option>
 <option value="opera">Operador</option>
 </select>
