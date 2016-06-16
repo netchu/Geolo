@@ -3,12 +3,13 @@
 			$funcion->conectar();
 			$amod=$_POST['jorna'];
 			$estatus=$_POST['estatus'];
-			$sql="UPDATE `jornaleros` SET `estatus`='".$estatus."',`cedula`=NULL WHERE numjornal='".$amod."'";
+			if ($nombreparro=="" || $amod==""){
+				echo "<script>alert('Campos vacios'); self.location='../vista/eliminar.php';</script>";
+			}
+			else {
+			$sql="UPDATE `parroquia` SET `estatus`='".$estatus."',`cedula`=NULL WHERE numparroquia='".$amod."'";
 			$query=$funcion->consulta($sql);
-			if (!$query){
-			echo "Error al eliminar parroquia";}
-				else
-			echo "Parroquia eliminada exitosamente";
-					echo "<br><a href='../vista/eliminar.php'>Volver a menu eliminar</a>";
+			echo "<script>alert('Estatus de parroquia modificado exitosamente'); self.location='../vista/eliminar.php';</script>";}
+			
 		?>
 	

@@ -1,14 +1,13 @@
 <?php
 			require_once '../modelo/conex.php';
 			$funcion->conectar();
-			$numjornal=$_POST['numjornal'];
 			$nombrejornal=$_POST['nombrejornal'];
+			if ($nombrejornal==""){
+				echo "<script>alert('Campos vacios'); self.location='../vista/agregar.php';</script>";
+			}
+			else {
 			$sql="INSERT INTO `jornaleros` (`numjornal`, `nombrejornal`, `estatus`, `cedula`) VALUES ('".$numjornal."', '".$nombrejornal."', 1, NULL)";
 			$query=$funcion->consulta($sql);
-			if (!$query){
-			echo "Error al a&ntilde;adir Jotnalero";}
-				else
-			echo "Jornalero a&ntilde;adida exitosamente";
-					echo "<br><a href='../vista/agregar.php'>Volver a menu agregar</a>";
-		?>
+			echo "<script>alert('Jornalero agregado exitosamente'); self.location='../vista/agregar.php';</script>";}
+			?>
 	

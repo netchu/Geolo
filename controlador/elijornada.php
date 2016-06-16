@@ -8,7 +8,6 @@
 			if (!$query){
 			echo "Error al eliminar jornada";}
 				else
-			echo "Jornada eliminada exitosamente";
-					echo "<br><a href='../vista/eliminar.php'>Volver a menu eliminar</a>";
+			echo "<script>alert('Estatus de jornada modificado exitosamente'); self.location='../vista/eliminar.php';</script>";
 		?>
 	

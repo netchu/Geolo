@@ -7,12 +7,12 @@
 			$direccion=$_POST['direccion'];
 			$tlf=$_POST['tlfcontacto'];
 			$descripcion=$_POST['descripcion'];
-			$sql="UPDATE `jornadas` SET `numjornada`='".$amod."',`fechajornada`='".$fechajornada."',`numparroquia`='".$parroquia."',`direccion`='".$direccion."',`tlfcontacto`='".$tlf."',`descripcion`='".$descripcion."',`estatus`='1',`cedula`=NULL WHERE numjornada='".$amod."'";
+			if ($fechajornada=="" || $parroquia=="" || $direccion=="" || $tlf=="" || $descripcion==""){
+				echo "<script>alert('Campos vacios'); self.location='../vista/modificar.php';</script>";
+			}
+			else{
+			$sql="UPDATE `jornadas` SET `fechajornada`='".$fechajornada."',`numparroquia`='".$parroquia."',`direccion`='".$direccion."',`tlfcontacto`='".$tlf."',`descripcion`='".$descripcion."',`estatus`='1',`cedula`=NULL WHERE numjornada='".$amod."'";
 			$query=$funcion->consulta($sql);
-			if (!$query){
-			echo "Error al modificar jornada";}
-				else
-			echo "Jornada modificada exitosamente";
-					echo "<br><a href='../vista/modificar.php'>Volver a menu modificar</a>";
+			echo "<script>alert('Jornada agregada exitosamente'); self.location='../vista/modificar.php';</script>";}
 		?>
 	

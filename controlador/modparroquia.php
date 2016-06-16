@@ -2,14 +2,13 @@
 			require_once '../modelo/conex.php';
 			$funcion->conectar();
 			$amod=$_POST['parro'];
-			$numparro=$_POST['numparro'];
 			$nombreparro=$_POST['nombreparro'];
-			$sql="UPDATE `parroquia` SET `numparroquia`='".$amod."',`nombreparro`='".$nombreparro."',`estatus`='1',`cedula`=NULL WHERE numparroquia='".$amod."'";
+			if ($nombreparro=="" || $amod==""){
+				echo "<script>alert('Campos vacios'); self.location='../vista/modificar.php';</script>";
+			}
+			else {
+			$sql="UPDATE `parroquia` SET `nombreparro`='".$nombreparro."',`estatus`='1',`cedula`=NULL WHERE numparroquia='".$amod."'";
 			$query=$funcion->consulta($sql);
-			if (!$query){
-			echo "Error al modificar parroquia";}
-				else
-			echo "Parroquia modificada exitosamente";
-					echo "<br><a href='../vista/modificar.php'>Volver a menu modificar</a>";
-		?>
+			echo "<script>alert('Estatus de parroquia modificado exitosamente'); self.location='../vista/eliminar.php';</script>";}
+			?>
 	
